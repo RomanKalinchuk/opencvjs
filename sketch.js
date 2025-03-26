@@ -5,6 +5,7 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
+  setTimeout(() => {console.log(typeof cv)}, 1000)
   
 }
 
@@ -13,8 +14,6 @@ function draw() {
   video.loadPixels()
   grayscale(video)
   image(video, 0,0,width,height)
-  
-  console.log(typeof cv)
   
 }
 
