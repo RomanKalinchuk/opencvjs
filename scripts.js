@@ -4,6 +4,6 @@ var color = 'Black'
 function buttonPress(button){
 
     color = button.innerHTML
-    iframe.setColor()
+    iframe.setColor(color)
 
 }
