@@ -1,3 +1,3 @@
-functions onOpenCvReady(){
+function onOpenCvReady(){
   console.log("OpenCV is Ready!")
 }
