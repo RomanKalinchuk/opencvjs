@@ -1,0 +1,46 @@
+
+html, body{
+    text-align: center;
+    background-color: #454444;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1 {
+    margin-left: 10pt;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#content {
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 100%;
+    background-color: gray;
+}
+
+.button {
+    background-color: #7777ff;
+    border-color: #909090;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin:10px;
+    height: 35pt;
+    width: 50pt;
+    font-weight: 900;
+    font-size: 12pt;
+}
+
+iframe{
+    border: none;
+    overflow: hidden;
+    margin-top: 20pt;
+    border-radius: 10pt;
+}
