@@ -6,7 +6,6 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
-  setInterval(() => {console.log(FrameColor)},1000)
   
 }
 
