@@ -1,4 +1,4 @@
-let src, dst, video, img, faceCascade
+let src, dst, video, img, faceCascade, color
 
 function setup() {
   createCanvas(720, 480)
@@ -25,9 +25,9 @@ function grayscale(img){
       let b = img.pixels[index + 2];
       let grayed = (r + g + b) / 3; // Convert to grayscale
 
-      video.pixels[index] = grayed;
-      video.pixels[index + 1] = grayed;
-      video.pixels[index + 2] = grayed;
+      video.pixels[index] = grayed * (color == 'Red' ? 1:0);
+      video.pixels[index + 1] = grayed * (color == 'Green' ? 1:0);
+      video.pixels[index + 2] = grayed * (color == 'Blue' ? 1:0);
       video.pixels[index + 3] = 255; // Set alpha to fully opaque
     }
   }
