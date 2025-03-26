@@ -5,7 +5,7 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
-  setTimeout(() => {console.log(typeof cv)}, 1000)
+  setInterval(() => {console.log(typeof cv)}, 1000)
   
 }
 
