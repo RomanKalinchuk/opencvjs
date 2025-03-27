@@ -34,7 +34,3 @@ function grayscale(img){
   }
   video.updatePixels()
 }
-
-function onOpenCvReady() {
-    console.log("OpenCV.js is ready!");
-}
