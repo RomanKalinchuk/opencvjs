@@ -19,7 +19,6 @@ function setup() {
 function draw() {
   //background(50)
   video.loadPixels()
-  grayscale()
   image(video, 0,0,width,height)
   getFaces()
 }
