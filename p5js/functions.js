@@ -23,6 +23,7 @@ function grayscale(){
 function getFaces(){
   grayscale()
   // Detect faces
+  let faces = new cv.RectVector()
   classifier.detectMultiScale(video, faces, 1.1, 3, 0);
 
     // Draw rectangles around faces
