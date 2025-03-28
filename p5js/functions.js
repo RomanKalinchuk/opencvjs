@@ -33,20 +33,3 @@ function getFaces(){
     rect(face.x, face.y, face.width, face.height);
   }
 }
-
-function loadModel(path, url, callback) {
-    let req = new XMLHttpRequest();
-    req.open('GET', url, true);
-    req.responseType = 'arraybuffer';
-
-    req.onload = function() {
-        if (req.status === 200) {
-            let data = new Uint8Array(req.response);
-            cv.FS_createDataFile('/', path, data, true, false, false);
-            callback(path); // Call the callback function with the file path
-        } else {
-            console.error('Failed to load ' + url);
-        }
-    };
-    req.send();
-}
