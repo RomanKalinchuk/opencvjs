@@ -4,10 +4,11 @@ let openCVReady = false
 let faces = []
 
 function preload() {
-    cv.then(() => {
+    cv.then((CV) => {
         classifier = new cv.CascadeClassifier()
         classifier.load('haarcascade_frontalface_default.xml')
         openCVReady = true
+        cv = CV
         console.log("HELLO")
     })
 }
