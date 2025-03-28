@@ -1,11 +1,13 @@
 let video, classifier
 let frameColor = 'Black'
+let openCVReady = false
 let faces = []
 
 function preload() {
     cv['onRuntimeInitialized'] = () => {
         classifier = new cv.CascadeClassifier()
         classifier.load('haarcascade_frontalface_default.xml')
+        openCVReady = true
     }
 }
 
