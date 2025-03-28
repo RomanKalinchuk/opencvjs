@@ -7,9 +7,8 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
-  //faces = new cv.RectVector()
-  //gray = new cv.Mat()
-  console.log(typeof cv)
+  faces = new cv.RectVector()
+  gray = new cv.Mat()
 }
 
 function draw() {
