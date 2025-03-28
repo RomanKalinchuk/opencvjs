@@ -8,6 +8,7 @@ function preload() {
         classifier = new cv.CascadeClassifier()
         classifier.load('haarcascade_frontalface_default.xml')
         openCVReady = true
+        console.log("HELLO")
     }
 }
 
