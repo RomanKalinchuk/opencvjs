@@ -7,6 +7,8 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
+  classifier = new cv.CascadeClassifier()
+  classifier.load('haarcascade_frontalface_default.xml')
   faces = new cv.RectVector()
   gray = new cv.Mat()
 }
