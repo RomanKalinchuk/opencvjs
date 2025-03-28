@@ -21,7 +21,7 @@ function grayscale(){
 }
 
 function getFaces(){
-  if(!openCVReady){
+  if(!faceDetectReady){
     console.log('openCV not Ready!')
     return;
   }
