@@ -6,7 +6,7 @@ let faces = []
 async function loadCV() {
     cv = (cv instanceof Promise) ? await cv : cv
     faceDetectReady = true
-    console.log(Obect.keys(cv))
+    console.log(Object.keys(cv))
 }
 
 function preload(){
