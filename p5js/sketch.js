@@ -10,10 +10,10 @@ function setup() {
   console.log(Object.keys(cv))
   //while(typeof cv.CascadeClassifier == 'undefined');
   console.log('done!')
-  classifier = new cv.CascadeClassifier()
-  classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
-  faces = new cv.RectVector()
-  gray = new cv.Mat()
+  //classifier = new cv.CascadeClassifier()
+  //classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
+  //faces = new cv.RectVector()
+  //gray = new cv.Mat()
 }
 
 function draw() {
@@ -21,6 +21,6 @@ function draw() {
   video.loadPixels()
   grayscale()
   image(video, 0,0,width,height)
-  getFaces()
+  //getFaces()
   console.log(Object.keys(cv))
 }
