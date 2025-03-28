@@ -21,7 +21,10 @@ function grayscale(){
 }
 
 function getFaces(){
-  console.log(cv)
+  if(!openCVReady){
+    console.log('openCV not Ready!')
+    return;
+  }
   grayscale()
   // Detect faces
   let faces = new cv.RectVector()
