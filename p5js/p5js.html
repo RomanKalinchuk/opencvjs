@@ -3,6 +3,13 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script>
+          let Module = {
+            onRuntimeInitialized: function() {
+              console.log("OpenCV is fully loaded", cv);
+            }
+          };
+        </script>
         <script src="/opencvjs/opencv/opencv.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
