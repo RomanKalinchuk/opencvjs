@@ -1,16 +1,25 @@
-let video, classifier
+let video, classifier,faceCascade
 let frameColor = 'Black'
-let openCVReady = false
+let faceDetectReady = false;
 let faces = []
 
 function preload() {
-    cv.then((CV) => {
-        cv = CV
-        classifier = new cv.CascadeClassifier()
-        classifier.load('haarcascade_frontalface_default.xml')
-        openCVReady = true
-        console.log("HELLO")
-    })
+    // Wait until OpenCV.js is fully loaded
+    cv.onRuntimeInitialized = () => {
+        console.log("OpenCV.js is ready!");
+
+        let cascadeUrl = 'opencv/haarcascade_frontalface_default.xml';
+
+        // Preload Haar cascade XML file into OpenCV's filesystem
+        cv.FS_createPreloadedFile('/', cascadeUrl, cascadeUrl, true, false, () => {
+            faceCascade = new cv.CascadeClassifier();
+            faceCascade.load(cascadeUrl);
+            faceDetectReady = true;
+            console.log("Haar cascade loaded successfully");
+        }, (err) => {
+            console.error("Failed to load Haar cascade:", err);
+        });
+    };
 }
 
 function setup() {
