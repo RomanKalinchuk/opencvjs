@@ -22,5 +22,4 @@ function draw() {
   grayscale()
   image(video, 0,0,width,height)
   //getFaces()
-  console.log(cv.CascadeClassifier)
 }
