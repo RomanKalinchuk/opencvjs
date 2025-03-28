@@ -11,7 +11,7 @@ function setup() {
   while(typeof cv.CascadeClassifier == 'undefined');
   console.log('done!')
   classifier = new cv.CascadeClassifier()
-  classifier.load('haarcascade_frontalface_default.xml')
+  classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
   faces = new cv.RectVector()
   gray = new cv.Mat()
 }
