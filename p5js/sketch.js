@@ -3,8 +3,10 @@ let frameColor = 'Black'
 let faces = []
 
 function preload() {
-    classifier = new cv.CascadeClassifier();
-    classifier.load('haarcascade_frontalface_default.xml'); // Ensure this file is accessible
+    cv['onRuntimeInitialized'] = () => {
+        classifier = new cv.CascadeClassifier()
+        classifier.load('haarcascade_frontalface_default.xml')
+    }
 }
 
 function setup() {
