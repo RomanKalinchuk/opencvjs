@@ -7,11 +7,19 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
+  
   cv.then((cv) => {
-    classifier = new cv.CascadeClassifier()
-    classifier.load('https://https://romankalinchuk.github.io/opencvjs/opencv/haarcascade_frontalface_default.xml') //cant open in read mode error
-    faces = new cv.RectVector()
-    gray = new cv.Mat()
+    let cascadeUrl = '../opencv/haarcascade_frontalface_default.xml'; // Ensure this file is in the same directory
+    cv.FS_createPreloadedFile('/', cascadeUrl, cascadeUrl, true, false, () => {
+        faceCascade = new cv.CascadeClassifier();
+        faceCascade.load(cascadeUrl);
+        faceDetectReady = true;
+        console.log("Haar cascade loaded successfully")
+        faces = new cv.RectVector()
+        gray = new cv.Mat()
+    }, (err) => {
+        console.error("Failed to load Haar cascade:", err);
+    })
   })
 }
 
