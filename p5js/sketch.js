@@ -1,4 +1,4 @@
-let src, dst, video, img, faceCascade
+let video, classifier
 let frameColor = 'Black'
 let faces = []
 
