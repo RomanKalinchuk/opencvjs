@@ -6,13 +6,13 @@ function setColor(color){
   frameColor = color
 }
 
-function grayscale(img){
+function grayscale(){
   for (let y = 0; y < video.height; y++) {
     for (let x = 0; x < video.width; x++) {
       let index = (x + y * video.width) * 4;
-      let r = img.pixels[index];
-      let g = img.pixels[index + 1];
-      let b = img.pixels[index + 2];
+      let r = video.pixels[index];
+      let g = video.pixels[index + 1];
+      let b = video.pixels[index + 2];
       let grayed = (r + g + b) / 3; // Convert to grayscale
 
       video.pixels[index] = grayed * ((frameColor == 'Red' || frameColor == 'Black') ? 1:0);
@@ -24,15 +24,16 @@ function grayscale(img){
   video.updatePixels()
 }
 
-function getFaces(frame){
+function getFaces(){
+  grayscale()
   // Detect faces
-    classifier.detectMultiScale(gray, faces, 1.1, 3, 0);
+  classifier.detectMultiScale(video, faces, 1.1, 3, 0);
 
     // Draw rectangles around faces
-    for (let i = 0; i < faces.size(); ++i) {
-      let face = faces.get(i);
-      stroke(255, 0, 0);
-      noFill();
-      rect(face.x, face.y, face.width, face.height);
-    }
+  for (let i = 0; i < faces.size(); ++i) {
+    let face = faces.get(i);
+    stroke(255, 0, 0);
+    noFill();
+    rect(face.x, face.y, face.width, face.height);
+  }
 }
