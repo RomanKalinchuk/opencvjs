@@ -9,7 +9,7 @@ function setup() {
   video.hide() // Hide the HTML video element
   
   cv.then((cv) => {
-    let cascadeUrl = '../opencv/haarcascade_frontalface_default.xml'; // Ensure this file is in the same directory
+    let cascadeUrl = 'opencv/haarcascade_frontalface_default.xml'; // Ensure this file is in the same directory
     cv.FS_createPreloadedFile('/', cascadeUrl, cascadeUrl, true, false, () => {
         faceCascade = new cv.CascadeClassifier();
         faceCascade.load(cascadeUrl);
