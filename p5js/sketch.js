@@ -21,5 +21,5 @@ function draw() {
   video.loadPixels()
   grayscale()
   image(video, 0,0,width,height)
-  //getFaces()
+  getFaces()
 }
