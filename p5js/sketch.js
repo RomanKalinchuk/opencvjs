@@ -8,7 +8,7 @@ function setup() {
   video.size(720, 480)
   video.hide() // Hide the HTML video element
   console.log(Object.keys(cv))
-  while(typeof cv.CascadeClassifier == 'undefined');
+  //while(typeof cv.CascadeClassifier == 'undefined');
   console.log('done!')
   classifier = new cv.CascadeClassifier()
   classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
