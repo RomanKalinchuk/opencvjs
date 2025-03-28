@@ -7,13 +7,12 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
-  cv.then((cv2) => {console.log(cv2)})
-  //while(typeof cv.CascadeClassifier == 'undefined');
+  cv.then((CV) => {cv = CV})
   console.log('new!')
-  //classifier = new cv.CascadeClassifier()
-  //classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
-  //faces = new cv.RectVector()
-  //gray = new cv.Mat()
+  classifier = new cv.CascadeClassifier()
+  classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml')
+  faces = new cv.RectVector()
+  gray = new cv.Mat()
 }
 
 function draw() {
