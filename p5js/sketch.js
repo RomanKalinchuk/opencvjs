@@ -6,7 +6,7 @@ let faces = []
 async function loadCV() {
     cv = (cv instanceof Promise) ? await cv : cv
     //console.log(Object.keys(cv))
-    let cascadeUrl = 'opencv/haarcascade_frontalface_default.xml'
+    let cascadeUrl = '../opencv/haarcascade_frontalface_default.xml'
     
     // Preload Haar cascade XML file into OpenCV's filesystem
     cv.FS_createPreloadedFile('/', cascadeUrl, cascadeUrl, true, false, () => {
