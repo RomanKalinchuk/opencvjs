@@ -5,8 +5,18 @@ let faces = []
 
 async function loadCV() {
     cv = (cv instanceof Promise) ? await cv : cv
-    faceDetectReady = true
-    console.log(Object.keys(cv))
+    //console.log(Object.keys(cv))
+    let cascadeUrl = 'opencv/haarcascade_frontalface_default.xml'
+    
+    // Preload Haar cascade XML file into OpenCV's filesystem
+    cv.FS_createPreloadedFile('/', cascadeUrl, cascadeUrl, true, false, () => {
+        faceCascade = new cv.CascadeClassifier()
+        faceCascade.load(cascadeUrl)
+        faceDetectReady = true
+        console.log("Haar cascade loaded successfully")
+    }, (err) => {
+        console.error("Failed to load Haar cascade:", err)
+    })
 }
 
 function preload(){
