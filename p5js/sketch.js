@@ -7,7 +7,7 @@ function setup() {
   video = createCapture(VIDEO)
   video.size(720, 480)
   video.hide() // Hide the HTML video element
-  console.log('waiting...')
+  console.log(Object.keys(cv))
   while(typeof cv.CascadeClassifier == 'undefined');
   console.log('done!')
   classifier = new cv.CascadeClassifier()
