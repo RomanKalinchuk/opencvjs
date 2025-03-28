@@ -1,4 +1,3 @@
-import "/opencvjs/opencv/opencv.js"
 let video, classifier
 let frameColor = 'Black'
 let faces = []
