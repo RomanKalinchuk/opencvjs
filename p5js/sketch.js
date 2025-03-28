@@ -9,6 +9,7 @@ function setup() {
   video.hide() // Hide the HTML video element
   faces = new cv.RectVector()
   gray = new cv.Mat()
+  console.log(typeof cv)
 }
 
 function draw() {
