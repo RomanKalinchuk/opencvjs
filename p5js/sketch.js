@@ -9,7 +9,7 @@ function setup() {
   video.hide() // Hide the HTML video element
   cv.then((cv) => {
     classifier = new cv.CascadeClassifier()
-    classifier.load('/opencvjs/opencv/haarcascade_frontalface_default.xml') //cant open in read mode error
+    classifier.load('https://https://romankalinchuk.github.io/opencvjs/opencv/haarcascade_frontalface_default.xml') //cant open in read mode error
     faces = new cv.RectVector()
     gray = new cv.Mat()
   })
