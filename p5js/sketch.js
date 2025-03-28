@@ -8,6 +8,7 @@ function setup() {
   video.size(720, 480)
   video.hide() // Hide the HTML video element
   console.log(Object.keys(cv))
+  console.log(cv)
   //while(typeof cv.CascadeClassifier == 'undefined');
   console.log('done!')
   //classifier = new cv.CascadeClassifier()
