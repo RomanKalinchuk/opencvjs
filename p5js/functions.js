@@ -21,6 +21,7 @@ function grayscale(){
 }
 
 function getFaces(){
+  console.log(typeof cv)
   if (typeof cv === 'undefined') {
         console.log('OpenCV not loaded yet');
         return;
