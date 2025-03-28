@@ -2,14 +2,9 @@ let video, classifier
 let frameColor = 'Black'
 let faces = []
 
-function preload(){
-  cv.then((cv) => {
-    loadModel('haarcascade_frontalface_default.xml', '/opencvjs/opencv/haarcascade_frontalface_default.xml', function(path) {
-      let faceCascade = new cv.CascadeClassifier();
-      faceCascade.load(path);
-      // Use the loaded faceCascade for face detection
-    })
-  })
+function preload() {
+    classifier = new cv.CascadeClassifier();
+    classifier.load('haarcascade_frontalface_default.xml'); // Ensure this file is accessible
 }
 
 function setup() {
