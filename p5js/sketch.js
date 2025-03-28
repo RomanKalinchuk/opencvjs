@@ -4,7 +4,7 @@ let faceDetectReady = false;
 let faces = []
 
 function preload() {
-    if(cv.Mat) console.log("cv Loaded cv.Mat")
+    console.log(cv.Mat)
     // Wait until OpenCV.js is fully loaded
     cv.onRuntimeInitialized = () => {
         console.log("OpenCV.js is ready!");
