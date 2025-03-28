@@ -7,7 +7,11 @@ async function loadCV() {
     cv = (cv instanceof Promise) ? await cv : cv
     faceDetectReady = true
     console.log(Obect.keys(cv))
-}()
+}
+
+function preload(){
+    loadCV()
+}
 
 function setup() {
   createCanvas(720, 480)
